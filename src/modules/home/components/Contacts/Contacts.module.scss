@@ -1,0 +1,80 @@
+.inner {
+	margin-bottom: 80px;
+
+	ul {
+		margin-bottom: 0;
+		padding-left: 0;
+	}
+}
+
+.map {
+	width: 100vw;
+	left: calc((100% - 100vw) / 2);
+	height: 400px;
+	overflow: hidden;
+	position: relative;
+
+	@include media($mobile-bp) {
+		height: 300px;
+	}
+
+	&Inner {
+		height: 100%;
+		filter: brightness(0.7);
+		transition: filter 0.4s ease-in-out;
+
+		&:hover {
+			filter: brightness(1);
+			transition: filter 0.4s ease-in-out;
+		}
+	}
+
+	&Frame {
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+}
+
+.contacts {
+	@include flex($align: flex-start, $gap: 24px);
+	row-gap: 40px;
+	flex-wrap: wrap;
+	list-style-type: none;
+	margin-block: 48px;
+
+	@include media($mobile-bp) {
+		margin-block: 24px;
+	}
+
+	&Inner {
+		@include flex($align: center, $gap: 16px);
+		max-width: 338px;
+		width: 100%;
+
+		@include media($mobile-bp) {
+			max-width: unset;
+		}
+
+		& dt {
+			@include flex(center);
+			font-weight: 600;
+			color: var(--main-text);
+			text-transform: uppercase;
+			margin-bottom: 16px;
+
+			img {
+				margin-right: 8px;
+			}
+		}
+
+		& dd {
+			white-space: break-spaces;
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+	}
+}

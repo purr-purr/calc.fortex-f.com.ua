@@ -1,0 +1,28 @@
+.container {
+	font-size: 20px;
+	line-height: 1;
+	font-weight: 700;
+	letter-spacing: 0.2px;
+	text-align: center;
+	width: fit-content;
+	color: var(--white);
+	text-decoration: none;
+	transition: color 0.3s ease-in-out;
+
+	span {
+		display: block;
+		font-size: 16px;
+		font-weight: 500;
+		padding-top: 5px;
+	}
+
+	&:hover {
+		color: var(--primary);
+		opacity: 1;
+		transition: color 0.3s ease-in-out;
+	}
+
+	&.whiteMode {
+		color: var(--main-text);
+	}
+}

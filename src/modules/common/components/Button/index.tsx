@@ -1,7 +1,8 @@
-import {createElement, FC, FormEvent,} from 'react';
+import { createElement, FC, FormEvent } from 'react';
+
+import cn from 'classnames';
 
 import s from './Button.module.scss';
-import cn from 'classnames';
 
 const Button: FC<{
 	text: string;
@@ -13,15 +14,15 @@ const Button: FC<{
 	onClick?: (e: FormEvent) => void;
 	isDisabled?: boolean;
 }> = ({
-	      isDisabled = false,
-	      onClick,
-	      text,
-	      type = 'primary',
-	      size = 'regular',
-	      className,
-	      elementType = 'button',
-	      isFormSubmit = false
-      }) => {
+	isDisabled = false,
+	onClick,
+	text,
+	type = 'primary',
+	size = 'regular',
+	className,
+	elementType = 'button',
+	isFormSubmit = false,
+}) => {
 	const commonProps = {
 		disabled: isDisabled,
 		type: isFormSubmit ? 'submit' : 'button',
@@ -37,7 +38,7 @@ const Button: FC<{
 		});
 	}
 
-	return createElement('button', {...commonProps}, text);
+	return createElement('button', { ...commonProps }, text);
 };
 
 export default Button;

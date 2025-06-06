@@ -1,5 +1,5 @@
 .container {
-	max-width: 1008px;
+	max-width: 775px;
 	width: 100%;
 }
 
@@ -8,7 +8,7 @@
 	text-align: center;
 	font-size: 40px;
 	font-weight: 700;
-	color: var(--bold-text);
+	color: var(--main-text);
 
 	@include media($mobile-bp) {
 		font-size: 20px;
@@ -28,7 +28,7 @@
 
 .successStage {
 	font-size: 20px;
-	color: var(--bold-text);
+	color: var(--main-text);
 	margin-bottom: 40px;
 	text-align: center;
 

@@ -40,7 +40,7 @@
 
 	&.white {
 		background-color: var(--white);
-		color: var(--bold-text);
+		color: var(--main-text);
 
 		&:hover {
 			background-color: var(--primary);
@@ -51,7 +51,7 @@
 	&.light {
 		background-color: var(--white);
 		border-color: var(--light-blue2);
-		color: var(--bold-text);
+		color: var(--main-text);
 
 		&:hover {
 			background-color: var(--primary);

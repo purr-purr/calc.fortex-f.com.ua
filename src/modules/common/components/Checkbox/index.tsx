@@ -1,5 +1,4 @@
-import type { FC } from 'react';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, type FC } from 'react';
 
 import s from './Checkbox.module.scss';
 

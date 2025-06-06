@@ -1,5 +1,5 @@
-import {importDoc} from '@utils/formatters';
-import {IDocumentsListGroup, type IDocumentsList} from '@utils/types';
+import { importDoc } from '@utils/formatters';
+import { IDocumentsListGroup, type IDocumentsList } from '@utils/types';
 
 export const financeReports: IDocumentsListGroup[] = [
 	{
@@ -8,8 +8,10 @@ export const financeReports: IDocumentsListGroup[] = [
 			{
 				title:
 					'Звіт незалежного аудитора щодо річної звітності ТОВ ФОРТЕКС-ФІНАНС за рік, що закінчився 31.12.2024',
-				link: importDoc('Звіт незалежного аудитора щодо річної звітності ТОВ' +
-					' ФОРТЕКС-ФІНАНС за рік, що закінчився 31.12.2024.pdf'),
+				link: importDoc(
+					'Звіт незалежного аудитора щодо річної звітності ТОВ' +
+						' ФОРТЕКС-ФІНАНС за рік, що закінчився 31.12.2024.pdf',
+				),
 			},
 			{
 				title: 'Звіт з надання впевненості',
@@ -144,13 +146,19 @@ export const structureInfo: IDocumentsList[] = [
 		link: importDoc('1_Struktura vlasnosti na 17.03.2025.pdf'),
 	},
 	{
-		title: 'Відомості про остаточних ключових учасників ТОВ «ФОРТЕКС-ФІНАНС» станом на 17.03.2025',
-		link: importDoc('2_Vidomosti pro ostatochn.kliuch. uchasnykiv na 17.03.2025.pdf'),
+		title:
+			'Відомості про остаточних ключових учасників ТОВ «ФОРТЕКС-ФІНАНС» станом на 17.03.2025',
+		link: importDoc(
+			'2_Vidomosti pro ostatochn.kliuch. uchasnykiv na 17.03.2025.pdf',
+		),
 	},
 	{
-		title: 'Відомості  про власників істотної участі ТОВ «ФОРТЕКС-ФІНАНС» станом на 17.03.2025',
-		link: importDoc('3_Vidomosti pro vlasnykiv istotn. uchasti na 17.03.2025.pdf'),
-	}
+		title:
+			'Відомості  про власників істотної участі ТОВ «ФОРТЕКС-ФІНАНС» станом на 17.03.2025',
+		link: importDoc(
+			'3_Vidomosti pro vlasnykiv istotn. uchasti na 17.03.2025.pdf',
+		),
+	},
 ];
 
 export const archivedInformation: IDocumentsList[] = [
@@ -224,15 +232,20 @@ export const documents: IDocumentsList[] = [
 		link: importDoc('4_Mekhanizmy zakhystu prav spozh.pdf'),
 	},
 	{
-		title: 'Вимоги щодо взаємодії із Позичальником (Боржником) та іншими особами при врегулювання простроченої заборгованості.',
-		link: importDoc('5_Vymohy do etychnoi povedinky ta poriadok vzaiemodii_2025.pdf'),
+		title:
+			'Вимоги щодо взаємодії із Позичальником (Боржником) та іншими особами при врегулювання простроченої заборгованості.',
+		link: importDoc(
+			'5_Vymohy do etychnoi povedinky ta poriadok vzaiemodii_2025.pdf',
+		),
 	},
 	{
-		title: 'Перелік контактних даних Товариства (Кредитодавця), нового кредитора, за якими приймаються звернення споживачів фінансових послуг щодо діяльності залученої колекторської компанії.',
+		title:
+			'Перелік контактних даних Товариства (Кредитодавця), нового кредитора, за якими приймаються звернення споживачів фінансових послуг щодо діяльності залученої колекторської компанії.',
 		link: importDoc('6_Perelik danykh.pdf'),
 	},
 	{
-		title: 'Порядок і спосіб погашення простроченої заборгованості у ТОВ «ФОРТЕКС-ФІНАНС»',
+		title:
+			'Порядок і спосіб погашення простроченої заборгованості у ТОВ «ФОРТЕКС-ФІНАНС»',
 		link: importDoc('7_Poriadok i sposib_.pdf'),
-	}
+	},
 ];

@@ -1,9 +1,11 @@
-import type { FC, ReactNode } from 'react';
-import { useEffect } from 'react';
-import s from './ModalLayout.module.scss';
-import ICON_CLOSE from '@public/assets/icon-close.svg';
+import { useEffect, type FC, type ReactNode } from 'react';
 import Image from 'next/image';
+
 import cn from 'classnames';
+
+import ICON_CLOSE from '@public/assets/icon-close.svg';
+
+import s from './ModalLayout.module.scss';
 
 const ModalLayout: FC<{
 	isOpen: boolean;

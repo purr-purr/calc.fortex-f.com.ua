@@ -1,11 +1,13 @@
+import { FC } from 'react';
+
+import { calcXIRR, formatDate } from '@utils/formatters';
+
 import s from './CalcResult.module.scss';
-import {FC} from 'react';
-import {calcXIRR, formatDate} from '@utils/formatters';
 
 const CalcResult: FC<{
 	duration: number;
 	moneyAmount: number;
-}> = ({duration, moneyAmount}) => {
+}> = ({ duration, moneyAmount }) => {
 	const addDays = (days: number) => {
 		const currentDate = new Date();
 		currentDate.setDate(currentDate.getDate() + days);
@@ -36,51 +38,50 @@ const CalcResult: FC<{
 
 	return (
 		<div className={s.container}>
-			<h3 className={s.title}>Результат розрахунку відповідно до обраних
-				умов</h3>
+			<h3 className={s.title}>Результат розрахунку відповідно до обраних умов</h3>
 			<table className={s.table}>
 				<tbody>
-				<tr>
-					<td>Строк кредитування</td>
-					<td>{duration} днів</td>
-				</tr>
+					<tr>
+						<td>Строк кредитування</td>
+						<td>{duration} днів</td>
+					</tr>
 
-				<tr>
-					<td>Дата погашення</td>
-					<td>{finalDate}</td>
-				</tr>
+					<tr>
+						<td>Дата погашення</td>
+						<td>{finalDate}</td>
+					</tr>
 
-				<tr>
-					<td>Сума кредиту</td>
-					<td>{moneyAmount} грн</td>
-				</tr>
+					<tr>
+						<td>Сума кредиту</td>
+						<td>{moneyAmount} грн</td>
+					</tr>
 
-				<tr>
-					<td>Сума процентів</td>
-					<td>{amountOfInterest()} грн</td>
-				</tr>
-				<tr>
-					<td>Процентна ставка річних</td>
-					<td>{annualRate},00%</td>
-				</tr>
-				<tr>
-					<td>Загальні витрати за кредитом</td>
-					<td>{amountOfInterest()} грн</td>
-				</tr>
+					<tr>
+						<td>Сума процентів</td>
+						<td>{amountOfInterest()} грн</td>
+					</tr>
+					<tr>
+						<td>Процентна ставка річних</td>
+						<td>{annualRate},00%</td>
+					</tr>
+					<tr>
+						<td>Загальні витрати за кредитом</td>
+						<td>{amountOfInterest()} грн</td>
+					</tr>
 
-				<tr>
-					<td>Орієнтовна загальна вартість кредиту</td>
-					<td>{totalDebt} грн</td>
-				</tr>
+					<tr>
+						<td>Орієнтовна загальна вартість кредиту</td>
+						<td>{totalDebt} грн</td>
+					</tr>
 
-				<tr>
-					<td>Реальна річна процентна ставка</td>
-					<td>{xirrValue}% річних</td>
-				</tr>
-				<tr>
-					<td>Денна процентна ставка</td>
-					<td>{dailyRate}%</td>
-				</tr>
+					<tr>
+						<td>Реальна річна процентна ставка</td>
+						<td>{xirrValue}% річних</td>
+					</tr>
+					<tr>
+						<td>Денна процентна ставка</td>
+						<td>{dailyRate}%</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>

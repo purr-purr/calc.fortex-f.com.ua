@@ -1,7 +1,8 @@
 import { FC, type ReactNode } from 'react';
 
-import s from './InnerFrame.module.scss';
 import cn from 'classnames';
+
+import s from './InnerFrame.module.scss';
 
 const InnerFrame: FC<{
 	children: ReactNode;

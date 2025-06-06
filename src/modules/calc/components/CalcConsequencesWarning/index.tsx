@@ -1,7 +1,10 @@
 import { FC } from 'react';
+
 import ModalLayout from '@modules/common/components/ModalLayout';
-import s from './CalcConsequencesWarning.module.scss';
+
 import { COMPANY_NAME } from '@utils/const';
+
+import s from './CalcConsequencesWarning.module.scss';
 
 const CalcConsequencesWarning: FC<{
 	isModalOpen: boolean;

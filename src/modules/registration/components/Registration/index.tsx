@@ -1,29 +1,32 @@
-import s from './Registration.module.scss';
-import Button from '@modules/common/components/Button';
-import ModalLayout from '@modules/common/components/ModalLayout';
 import {ChangeEvent, FC, FormEvent, useEffect, useRef, useState} from 'react';
-import Input from "@modules/common/components/Input";
-import {IFormValues, IValidationState} from "@modules/registration/types";
+
+import Button from '@modules/common/components/Button';
+import Input from '@modules/common/components/Input';
+import ModalLayout from '@modules/common/components/ModalLayout';
 import {
 	validateDefault,
 	validateEmail,
-	validatePhone
-} from "@modules/registration/helpers";
+	validatePhone,
+} from '@modules/registration/helpers';
 
-const Registration: FC<{ moneyAmount: number, duration: number }> = (
-	{
-		moneyAmount,
-		duration
-	}) => {
+import s from './Registration.module.scss';
+
+import {IFormValues, IValidationState} from '@modules/registration/types';
+
+const Registration: FC<{ moneyAmount: number; duration: number }> = ({
+	                                                                     moneyAmount,
+	                                                                     duration,
+                                                                     }) => {
 	const [isRegistrationModal, setIsRegistrationModal] = useState<boolean>(false);
 	const [stepFormValid, setStepFormValid] = useState<boolean>(false);
 	const [isSuccessStage, setIsSuccessStage] = useState<boolean>(false);
 	const formRef = useRef<HTMLFormElement>(null);
 
 	const handleSuccessStage = (e: FormEvent) => {
+		setIsSuccessStage(true);
+
 		e.preventDefault();
 		formRef.current?.submit();
-		setIsSuccessStage(true);
 	};
 
 	const handleRegistrationModalClose = () => {
@@ -102,18 +105,19 @@ const Registration: FC<{ moneyAmount: number, duration: number }> = (
 					</p>
 				) : (
 					<>
-						<h3 className={s.title}>Оформлення споживчого кредиту</h3>
-						<form action="https://formsubmit.co/666hesoyam@gmail.com"
-						      method="POST" ref={formRef}>
+						<h3 className={s.title}>Оформлення кредиту для фізичних осіб</h3>
+						<form
+							action="https://formsubmit.co/666hesoyam@gmail.com"
+							method="POST"
+							ref={formRef}
+							onSubmit={handleSuccessStage}
+						>
 							<input type="hidden" name="_next"
-							       value="http://localhost:3000/loan/"/>
+							       value="https://calc.fortex-f.com.ua/loan/"/>
 							<input type="hidden" name="_captcha" value="false"/>
-							<input type="hidden" name="_subject"
-							       value="+1 заявка на кредит"/>
-							<input type="hidden" name="Сума кредиту"
-							       value={moneyAmount}/>
-							<input type="hidden" name="Строк кредиту"
-							       value={duration}/>
+							<input type="hidden" name="_subject" value="+1 заявка на кредит"/>
+							<input type="hidden" name="Сума кредиту" value={moneyAmount}/>
+							<input type="hidden" name="Строк кредиту" value={duration}/>
 
 							<Input
 								name="name"
@@ -123,6 +127,7 @@ const Registration: FC<{ moneyAmount: number, duration: number }> = (
 								value={formValues.name}
 								onChange={handleInputChange}
 								isInvalid={isValidInput('name')}
+								className={s.line}
 							/>
 
 							<Input
@@ -145,16 +150,14 @@ const Registration: FC<{ moneyAmount: number, duration: number }> = (
 								isInvalid={isValidInput('email')}
 							/>
 
-							<p
-								className={s.summary}>У сумі {moneyAmount} терміном на {' '}
-								{duration} днів</p>
+							<p className={s.summary}>
+								У сумі <b>{moneyAmount}</b> терміном на <b>{duration}</b> днів
+							</p>
 
 							<Button
 								isFormSubmit
 								onClick={
-									isSuccessStage
-										? handleRegistrationModalClose
-										: handleSuccessStage
+									isSuccessStage ? handleRegistrationModalClose : handleSuccessStage
 								}
 								className={s.startRegistrationBtn}
 								isDisabled={!stepFormValid}
@@ -163,7 +166,6 @@ const Registration: FC<{ moneyAmount: number, duration: number }> = (
 						</form>
 					</>
 				)}
-
 			</ModalLayout>
 		</>
 	);

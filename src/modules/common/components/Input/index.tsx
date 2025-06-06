@@ -1,7 +1,8 @@
 import { FC, InputHTMLAttributes, ReactNode } from 'react';
 
-import s from './Input.module.scss';
 import cn from 'classnames';
+
+import s from './Input.module.scss';
 
 interface InputProps
 	extends InputHTMLAttributes<HTMLInputElement | HTMLSelectElement> {

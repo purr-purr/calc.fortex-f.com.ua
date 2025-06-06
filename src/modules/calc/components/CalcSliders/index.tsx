@@ -1,29 +1,28 @@
-import {FC, useState} from 'react';
+import { FC, useState } from 'react';
+
+import Slider from '@mui/material/Slider';
 
 import s from './CalcSliders.module.scss';
-import Slider from '@mui/material/Slider';
-import type {ICalcRange, SlidesData} from '@modules/calc/types';
+
+import type { ICalcRange, SlidesData } from '@modules/calc/types';
 
 const CalcSliders: FC<{
 	ranges: ICalcRange;
 	isMidBorrow: boolean;
 	onSlidesChange: (data: SlidesData) => void;
-}> = ({ranges, isMidBorrow, onSlidesChange}) => {
+}> = ({ ranges, isMidBorrow, onSlidesChange }) => {
 	const [slidesData, setSlidesData] = useState<SlidesData>({
 		amount: 1000,
-		duration: 1
+		duration: 1,
 	});
 
 	const handleChange = (name: string, value: number) => {
-		console.log(name, value)
-		const updatedData = {...slidesData, [name]: value};
+		const updatedData = { ...slidesData, [name]: value };
 		setSlidesData(updatedData);
 		onSlidesChange(updatedData);
 	};
 
-	const moneyRange = isMidBorrow
-		? ranges.money.midBorrow
-		: ranges.money.default;
+	const moneyRange = isMidBorrow ? ranges.money.midBorrow : ranges.money.default;
 	const durationRange = isMidBorrow
 		? ranges.duration.midBorrow
 		: ranges.duration.default;

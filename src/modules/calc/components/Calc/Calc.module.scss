@@ -6,17 +6,16 @@
 
 .tabs {
 	width: 100%;
-	border-radius: 12px;
 	overflow: hidden;
 	z-index: 1;
-	margin-bottom: 16px;
+	margin-bottom: 36px;
 
 	@include pseudo() {
 		z-index: 2;
 		left: 0;
-		top: 0;
+		bottom: 0;
 		width: 50%;
-		height: 100%;
+		height: 2px;
 		background-color: var(--primary);
 		pointer-events: none;
 		transform: translateX(100%);
@@ -35,34 +34,23 @@
 	padding: 8px;
 	text-align: center;
 	position: relative;
-	z-index: 3;
+	z-index: 1;
 	background-color: transparent;
-	border-radius: 12px;
-	border: 2px solid var(--primary);
+	border: 0;
+	border-bottom: 2px solid var(--gray-bg);
 	font-size: 16px;
 	line-height: 24px;
-	color: var(--primary);
 	font-weight: 500;
 	transition: color 0.3s ease-in-out;
 
 	@include media($mobile-bp) {
 		font-size: 14px;
 		line-height: 18px;
-		border-radius: 10px;
-	}
-
-	&:first-child {
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-
-	&:last-child {
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
 	}
 
 	&.active {
-		color: var(--white);
+		color: var(--primary);
+		font-weight: 700;
 		transition: color 0.3s ease-in-out;
 	}
 }

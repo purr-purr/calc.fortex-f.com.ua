@@ -2,7 +2,7 @@
 	@include flex($align: center);
 	font-size: 14px;
 	line-height: 20px;
-	color: var(--bold-text);
+	color: var(--main-text);
 	cursor: pointer;
 
 	input[type='checkbox'] {

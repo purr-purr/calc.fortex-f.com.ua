@@ -1,14 +1,15 @@
-import {useState} from 'react';
-import type {ICalcRange, SlidesData} from '@modules/calc/types';
+import { useState } from 'react';
+
+import CalcConsequencesWarning from '@modules/calc/components/CalcConsequencesWarning';
+import CalcResult from '@modules/calc/components/CalcResult';
 import CalcSliders from '@modules/calc/components/CalcSliders';
-import cn from 'classnames';
 import Button from '@modules/common/components/Button';
-import CalcConsequencesWarning
-	from '@modules/calc/components/CalcConsequencesWarning';
+import Registration from '@modules/registration/components/Registration';
+import cn from 'classnames';
 
 import s from './Calc.module.scss';
-import CalcResult from "@modules/calc/components/CalcResult";
-import Registration from "@modules/registration/components/Registration";
+
+import type { ICalcRange, SlidesData } from '@modules/calc/types';
 
 const Calc = () => {
 	const [isMidBorrow, setIsMidBorrow] = useState(false);
@@ -16,7 +17,7 @@ const Calc = () => {
 		useState(false);
 	const [slidesData, setSlidesData] = useState<SlidesData>({
 		amount: 1000,
-		duration: 1
+		duration: 1,
 	});
 
 	const loanConditions: ICalcRange = {
@@ -53,10 +54,7 @@ const Calc = () => {
 				onSlidesChange={setSlidesData}
 			/>
 
-			<CalcResult
-				moneyAmount={slidesData.amount}
-				duration={slidesData.duration}
-			/>
+			<CalcResult moneyAmount={slidesData.amount} duration={slidesData.duration} />
 
 			<Button
 				onClick={() => setIsConsequencesWarningModal(true)}

@@ -17,7 +17,7 @@ const About: FC<{
 					<li className={s.advantagesItem} key={item.desc}>
 						<Image src={item.icon} alt="icon" />
 						<h5 className={s.advantagesTitle}>{item.title}</h5>
-						<p className={s.advantagesDesc}>{item.desc}</p>
+						{item.desc && <p className={s.advantagesDesc}>{item.desc}</p>}
 					</li>
 				))}
 			</ul>
@@ -27,9 +27,8 @@ const About: FC<{
 				subTitle={`ТОВ «ФОРТЕКС-ФІНАНС» — надійний партнер на фінансовому ринку України з 2015 року`}
 			>
 				<p>
-					Ми надаємо юридичним особам та підприємцям можливість отримувати фінансову
-					підтримку на вигідних умовах, забезпечуючи гнучкі та прозорі кредитні
-					рішення.
+					Ми надаємо можливість отримувати фінансову підтримку на вигідних умовах,
+					забезпечуючи прозорі кредитні рішення.
 				</p>
 
 				<p>

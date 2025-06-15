@@ -5,8 +5,7 @@ import ICON_PEOPLE from '@public/assets/icon-people.svg';
 export const advantagesList = [
 	{
 		icon: ICON_MONEY,
-		title: 'Фінансування бізнесу',
-		desc: 'Надання коштів та банківських металів у кредит для бізнесу.',
+		title: 'Надання коштів та банківських металів у кредит для бізнесу',
 	},
 	{
 		icon: ICON_CONFIGURATION,

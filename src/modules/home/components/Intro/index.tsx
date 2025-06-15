@@ -10,9 +10,7 @@ const Intro = () => {
 	return (
 		<section className={s.container}>
 			<article className={s.info}>
-				<h1 className={s.infoTitle}>
-					Фінанси, що працюють <br /> на ваш бізнес
-				</h1>
+				<h1 className={s.infoTitle}>Фінанси, що працюють на Вас</h1>
 				<p className={s.infoDesc}>{COMPANY_CATCHPHRASE}</p>
 			</article>
 

@@ -1,8 +1,8 @@
 .container {
-	margin-block-end: 160px;
+	margin-block-end: 80px;
 
 	@include media($mobile-bp) {
-		margin-block-end: 80px;
+		margin-block-end: 40px;
 	}
 }
 

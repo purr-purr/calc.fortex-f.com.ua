@@ -15,7 +15,7 @@ const CalcResult: FC<{
 	};
 
 	const amountOfInterest = () => {
-		const result = moneyAmount * 0.75 * (duration / 365);
+		const result = moneyAmount * 0.99 * (duration / 365);
 		return Number(result.toFixed(2));
 	};
 
@@ -27,8 +27,8 @@ const CalcResult: FC<{
 	const calcFinalDate = addDays(duration);
 	const finalDate = formatDate(calcFinalDate as Date);
 	const totalDebt = moneyAmount + amountOfInterest();
-	const annualRate = 75;
-	const dailyRate = roundUpToDecimal(75 / 365);
+	const annualRate = 99;
+	const dailyRate = roundUpToDecimal(annualRate / 365);
 	const cashFlows = [-moneyAmount, totalDebt];
 	const unixDates = [
 		new Date().getTime() / 1000,

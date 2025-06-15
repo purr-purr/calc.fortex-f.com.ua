@@ -1,22 +1,20 @@
-import {ChangeEvent, FC, FormEvent, useEffect, useRef, useState} from 'react';
+import { ChangeEvent, FC, FormEvent, useEffect, useRef, useState } from 'react';
 
 import Button from '@modules/common/components/Button';
 import Input from '@modules/common/components/Input';
 import ModalLayout from '@modules/common/components/ModalLayout';
-import {
-	validateDefault,
-	validateEmail,
-	validatePhone,
-} from '@modules/registration/helpers';
+import { validateDefault, validatePhone } from '@modules/registration/helpers';
+
+import { COMPANY_EMAIL } from '@utils/const';
 
 import s from './Registration.module.scss';
 
-import {IFormValues, IValidationState} from '@modules/registration/types';
+import { IFormValues, IValidationState } from '@modules/registration/types';
 
 const Registration: FC<{ moneyAmount: number; duration: number }> = ({
-	                                                                     moneyAmount,
-	                                                                     duration,
-                                                                     }) => {
+	moneyAmount,
+	duration,
+}) => {
 	const [isRegistrationModal, setIsRegistrationModal] = useState<boolean>(false);
 	const [stepFormValid, setStepFormValid] = useState<boolean>(false);
 	const [isSuccessStage, setIsSuccessStage] = useState<boolean>(false);
@@ -37,20 +35,16 @@ const Registration: FC<{ moneyAmount: number; duration: number }> = ({
 	};
 
 	const initFormValues: IFormValues = {
-		name: '',
 		phone: '',
-		email: '',
 	};
 
 	const [formValues, setFormValues] = useState<IFormValues>(initFormValues);
 	const [validationState, setValidationState] = useState<IValidationState>({
-		name: false,
 		phone: false,
-		email: false,
 	});
 
 	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const {name, value} = e.target;
+		const { name, value } = e.target;
 
 		setFormValues((prevValues) => ({
 			...prevValues,
@@ -61,11 +55,6 @@ const Registration: FC<{ moneyAmount: number; duration: number }> = ({
 			setValidationState((prevState) => ({
 				...prevState,
 				[name]: validatePhone(value),
-			}));
-		} else if (name === 'email') {
-			setValidationState((prevState) => ({
-				...prevState,
-				[name]: validateEmail(value),
 			}));
 		} else {
 			setValidationState((prevState) => ({
@@ -88,7 +77,7 @@ const Registration: FC<{ moneyAmount: number; duration: number }> = ({
 		<>
 			<Button
 				className={s.startRegistrationBtn}
-				text="Заявка на отримання кредиту"
+				text="Отримати дзвінок від менеджера"
 				onClick={() => setIsRegistrationModal(true)}
 			/>
 
@@ -99,36 +88,26 @@ const Registration: FC<{ moneyAmount: number; duration: number }> = ({
 			>
 				{isSuccessStage ? (
 					<p className={s.successStage}>
-						Дякуємо, ваша заявка в обробці, очікуйте активації особистого
-						кабінету або
+						Дякуємо, ваша заявка в обробці, очікуйте активації особистого кабінету або
 						дзвінка менеджеру.
 					</p>
 				) : (
 					<>
-						<h3 className={s.title}>Оформлення кредиту для фізичних осіб</h3>
 						<form
-							action="https://formsubmit.co/666hesoyam@gmail.com"
+							action={`https://formsubmit.co/${COMPANY_EMAIL}`}
 							method="POST"
 							ref={formRef}
 							onSubmit={handleSuccessStage}
 						>
-							<input type="hidden" name="_next"
-							       value="https://calc.fortex-f.com.ua/loan/"/>
-							<input type="hidden" name="_captcha" value="false"/>
-							<input type="hidden" name="_subject" value="+1 заявка на кредит"/>
-							<input type="hidden" name="Сума кредиту" value={moneyAmount}/>
-							<input type="hidden" name="Строк кредиту" value={duration}/>
-
-							<Input
-								name="name"
-								type="text"
-								placeholder="Iм’я"
-								label="Iм’я (як у паспорті)"
-								value={formValues.name}
-								onChange={handleInputChange}
-								isInvalid={isValidInput('name')}
-								className={s.line}
+							<input
+								type="hidden"
+								name="_next"
+								value="https://fortex-f.com.ua/loan/"
 							/>
+							<input type="hidden" name="_captcha" value="false" />
+							<input type="hidden" name="_subject" value="+1 заявка на кредит" />
+							<input type="hidden" name="Сума кредиту" value={moneyAmount} />
+							<input type="hidden" name="Строк кредиту" value={duration} />
 
 							<Input
 								name="phone"
@@ -140,20 +119,6 @@ const Registration: FC<{ moneyAmount: number; duration: number }> = ({
 								isInvalid={isValidInput('phone')}
 							/>
 
-							<Input
-								name="email"
-								type="email"
-								placeholder="email@email.com"
-								label="Email"
-								value={formValues.email}
-								onChange={handleInputChange}
-								isInvalid={isValidInput('email')}
-							/>
-
-							<p className={s.summary}>
-								У сумі <b>{moneyAmount}</b> терміном на <b>{duration}</b> днів
-							</p>
-
 							<Button
 								isFormSubmit
 								onClick={
@@ -161,7 +126,7 @@ const Registration: FC<{ moneyAmount: number; duration: number }> = ({
 								}
 								className={s.startRegistrationBtn}
 								isDisabled={!stepFormValid}
-								text="Подати заявку на отримання кредиту"
+								text="Отримати дзвінок від менеджера"
 							/>
 						</form>
 					</>

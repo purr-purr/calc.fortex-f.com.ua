@@ -206,7 +206,9 @@ export const documents: IDocumentsList[] = [
 		link: importDoc('Свідоцтво 13 04 2021.pdf'),
 	},
 	{
-		title: 'Правила надання коштів в кредит',
+		title:
+			'Правила надання коштів в кредит (для юр. осіб та' +
+			' фіз.осіб-підприємців)',
 		link: importDoc('PRAVYLA  kredyt.pdf'),
 	},
 	{
@@ -218,6 +220,48 @@ export const documents: IDocumentsList[] = [
 		link: importDoc(
 			'Ліцензія надання коштів у позику, в тому числі і на умовах фінансового кредиту.pdf',
 		),
+	},
+	{
+		title: 'Порядок обробки і захисту персональних даних',
+		link: importDoc('11.Poriadok obrobky i zakhystu personalnykh danykh.pdf'),
+	},
+	{
+		title: 'Порядок розгляду звернень споживачів',
+		link: importDoc('12.Poriadok rozghliadu zvernen spozhyvachiv.pdf'),
+	},
+	{
+		title: 'Механізми захисту прав споживачів',
+		link: importDoc('13.Mekhanizmy_zakhystu_prav_spozh.pdf'),
+	},
+	{
+		title: 'Вимоги щодо етичної поведінки',
+		link: importDoc('14.Vymohy shchodo etychnoi povedinky.pdf'),
+	},
+	{
+		title:
+			'Перелік контактних даних кредитодавця, нового кредитора, за якими приймаються\n' +
+			'звернення споживачів фінансових послуг',
+		link: importDoc('15.Perelik kontaktnykh danykh.pdf'),
+	},
+	{
+		title: 'Порядок і спосіб погашення простроченої заборгованості',
+		link: importDoc('16.Poriadok i sposib pohashennia zaborhovanosti.pdf'),
+	},
+	{
+		title:
+			'Порядок відступлення права вимоги за договором про споживчий кредит новому\n' +
+			'кредитодавцю',
+		link: importDoc('17.Poriadok vidstuplennia prava vymohy.pdf'),
+	},
+	{
+		title: 'Умови початку врегулювання простроченої заборгованості',
+		link: importDoc(
+			'18.Umovy pochatku vrehuliuvannia prostrochenoi zaborhovanosti.pdf',
+		),
+	},
+	{
+		title: 'Відомості про залучені колекторські компанії',
+		link: importDoc('19.Vidomosti pro kolektorski kompanii.pdf'),
 	},
 	{
 		title: 'Порядок обробки і захисту персональних даних ',

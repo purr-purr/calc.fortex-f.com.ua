@@ -8,7 +8,7 @@ export const APP_LINK: string = 'https://www.fortex-f.com.ua/';
 export const COMPANY_NAME: string[] = ['TOB', '“Фортекс-Фінанс”'];
 export const COMPANY_FULL_NAME: string = `${COMPANY_NAME[0]} ${COMPANY_NAME[1]}`;
 export const COMPANY_CATCHPHRASE: string =
-	'Пропонуємо зрозумілі та прозорі фінансові рішення для стабільного розвитку бізнесу - без зайвих складнощів';
+	'Пропонуємо зрозумілі та прозорі фінансові рішення без зайвих складнощів';
 export const COMPANY_PHONE: string = '+380665364923';
 export const COMPANY_EMAIL: string = 'fortexfinance@ukr.net';
 export const COMPANY_ADDRESS: string =

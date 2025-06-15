@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Image from 'next/image';
 
 import { COMPANY_FULL_NAME } from '@utils/const';
@@ -8,6 +9,16 @@ import INSHA_UA_IMG from './assets/insha-ua.jpg';
 import s from './PublicInfo.module.scss';
 
 const PublicInfo = () => {
+	useEffect(() => {
+		const link = document.createElement('a');
+		const fileName = '10. Publichna informatsiia ta pro diialnist.pdf';
+		link.href = '../assets/documents/' + fileName;
+		link.download = fileName;
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	}, []);
+
 	return (
 		<section className={s.container}>
 			<article className={s.inner}>
